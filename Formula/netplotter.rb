@@ -14,7 +14,8 @@ class Netplotter < Formula
   end
 
   def install
-    bin.install "netplotter"
+    bin.install Dir["netplotter-*"][0] => "netplotter"
+    chmod 0755, bin/"netplotter"
   end
 
   test do
